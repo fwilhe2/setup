@@ -1,0 +1,11 @@
+---
+
+- name: Setup machine (Ubuntu)
+  hosts: all
+  tasks:
+  - name: Install Basic Packages
+    become: yes
+    become_user: root
+    apt:
+      state: latest
+      name: ['neovim', 'zsh', 'htop', 'curl', 'tree', 'autojump', 'unzip', 'jq', 'silversearcher-ag', 'pandoc', 'apg', 'httpie', 'iotop', 'make', 'direnv', 'backblaze-b2']
